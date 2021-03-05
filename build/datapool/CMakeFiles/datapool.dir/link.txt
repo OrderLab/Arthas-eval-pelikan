@@ -1,2 +1,0 @@
-/usr/bin/ar qc libdatapool.a  CMakeFiles/datapool.dir/datapool_pmem.c.o
-/usr/bin/ranlib libdatapool.a

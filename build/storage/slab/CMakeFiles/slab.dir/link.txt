@@ -1,2 +1,0 @@
-/usr/bin/ar qc libslab.a  CMakeFiles/slab.dir/hashtable.c.o CMakeFiles/slab.dir/item.c.o CMakeFiles/slab.dir/slab.c.o
-/usr/bin/ranlib libslab.a

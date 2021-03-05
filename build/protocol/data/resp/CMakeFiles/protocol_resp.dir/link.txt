@@ -1,2 +1,0 @@
-/usr/bin/ar qc libprotocol_resp.a  CMakeFiles/protocol_resp.dir/compose.c.o CMakeFiles/protocol_resp.dir/parse.c.o CMakeFiles/protocol_resp.dir/request.c.o CMakeFiles/protocol_resp.dir/response.c.o CMakeFiles/protocol_resp.dir/token.c.o
-/usr/bin/ranlib libprotocol_resp.a

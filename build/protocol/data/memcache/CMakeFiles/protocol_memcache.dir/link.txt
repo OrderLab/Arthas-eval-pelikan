@@ -1,2 +1,0 @@
-/usr/bin/ar qc libprotocol_memcache.a  CMakeFiles/protocol_memcache.dir/request.c.o CMakeFiles/protocol_memcache.dir/response.c.o CMakeFiles/protocol_memcache.dir/parse.c.o CMakeFiles/protocol_memcache.dir/compose.c.o CMakeFiles/protocol_memcache.dir/klog.c.o
-/usr/bin/ranlib libprotocol_memcache.a

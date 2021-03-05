@@ -1,2 +1,0 @@
-/usr/bin/ar qc libhotkey.a  CMakeFiles/hotkey.dir/hotkey.c.o CMakeFiles/hotkey.dir/kc_map.c.o CMakeFiles/hotkey.dir/key_window.c.o
-/usr/bin/ranlib libhotkey.a

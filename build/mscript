@@ -1,4 +1,0 @@
-#!/bin/bash
-CC=wllvm make USE_PMEM=yes -j16
-extract-bc redis-server
-opt -loweratomic <redis-server.bc> redis-server-lower.bc
