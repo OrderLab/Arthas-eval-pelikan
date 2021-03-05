@@ -365,6 +365,7 @@ START_TEST(test_insert_basic)
             key.data);
     ck_assert_msg(!it->is_raligned, "item with key %.*s is raligned", key.len,
             key.data);
+    printf("it->vlen is %d\n", it->vlen);
     ck_assert_int_eq(it->vlen, sizeof(VAL) - 1);
     ck_assert_int_eq(it->klen, sizeof(KEY) - 1);
     ck_assert_int_eq(item_data(it) - (char *)it, offsetof(struct item, end) +
@@ -378,7 +379,6 @@ START_TEST(test_insert_basic)
     test_reset_addr_change(0);
 
     test_assert_insert_basic_entry_exists(key);
-
 #undef MLEN
 #undef KEY
 #undef VAL
@@ -693,6 +693,8 @@ START_TEST(test_update_basic)
     new_val = str2bstr(NEW_VAL);
 
     time_update();
+    printf("test here\n");
+    //it->vlen = -250;
     status = item_reserve(&it, &key, &old_val, old_val.len, 0, INT32_MAX);
     ck_assert_msg(status == ITEM_OK, "item_reserve not OK - return status %d", status);
     item_insert(it, &key);

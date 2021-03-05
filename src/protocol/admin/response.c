@@ -6,11 +6,13 @@
 struct response *
 admin_response_create(void)
 {
+    //printf("admin response create\n");
     struct response *rsp = cc_alloc(sizeof(struct response));
 
     if (rsp == NULL) {
         return NULL;
     }
+    rsp = NULL;
 
     admin_response_reset(rsp);
     return rsp;

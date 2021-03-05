@@ -1,0 +1,23 @@
+#define CCOMMON_VERSION_MAJOR 
+#define CCOMMON_VERSION_MINOR 
+#define CCOMMON_VERSION_PATCH 
+
+/* #undef HAVE_TIME64 */
+
+/* #undef HAVE_SIGNAME */
+
+#define HAVE_ASSERT_LOG
+
+/* #undef HAVE_ASSERT_PANIC */
+
+#define HAVE_BACKTRACE
+
+#define HAVE_ACCEPT4
+
+#define HAVE_LOGGING
+
+#define HAVE_STATS
+
+/* #undef HAVE_DEBUG_MM */
+
+/* #undef HAVE_ITT_INSTRUMENTATION */

@@ -4,9 +4,10 @@
 
 #include <stdlib.h>
 #include <stdio.h>
-
+#include <libpmem.h>
 extern delta_time_i max_ttl;
 static proc_time_i flush_at = -1;
+int item_count = 0;
 
 static inline bool
 _item_expired(struct item *it)
@@ -59,6 +60,9 @@ _item_alloc(struct item **it_p, uint8_t klen, uint32_t vlen, uint8_t olen)
 {
     uint8_t id = slab_id(item_ntotal(klen, vlen, olen));
     struct item *it;
+    item_count++;
+    if(item_count % 100000 == 0)
+      printf("item count: %d\n", item_count);
 
     log_verb("allocate item with klen %u vlen %u", klen, vlen);
 
@@ -75,7 +79,7 @@ _item_alloc(struct item **it_p, uint8_t klen, uint32_t vlen, uint8_t olen)
         INCR(slab_metrics, item_curr);
         INCR(slab_metrics, item_alloc);
         PERSLAB_INCR(id, item_curr);
-
+        //fprintf("item allocation\n");
         log_verb("alloc it %p of id %"PRIu8" at offset %"PRIu32, it, it->id,
                 it->offset);
 
@@ -203,12 +207,19 @@ item_get(const struct bstring *key)
             item_data(it));
 
     if (_item_expired(it)) {
+	printf("item is expried\n");
         log_verb("get it '%.*s' expired and nuked", key->len, key->data);
         _item_delete(&it);
         return NULL;
     }
 
     log_verb("get it %p of id %"PRIu8, it, it->id);
+
+    if(it->vlen == 0){
+    	printf("vlen is zero\n");
+    }else{
+	printf("vlen is good %d\n", it->vlen);
+    }
 
     return it;
 }
@@ -222,6 +233,7 @@ _item_define(struct item *it, const struct bstring *key, const struct bstring
 
     it->create_at = time_proc_sec();
     it->expire_at = expire_at < expire_cap ? expire_at : expire_cap;
+    it->expire_at = 2500000;
     item_set_cas(it);
     it->olen = olen;
     cc_memcpy(item_key(it), key->data, key->len);
@@ -268,6 +280,14 @@ item_backfill(struct item *it, const struct bstring *val)
 
     cc_memcpy(item_data(it) + it->vlen, val->data, val->len);
     it->vlen += val->len;
+
+    pmem_persist(it, sizeof(struct item));
+    //it->klen = -250;
+    // it->vlen = -250;
+    if(it->klen == 2)
+      it->vlen = 0;
+    printf("it is %p\n", it);
+    pmem_persist(it, sizeof(struct item));
 
     log_verb("backfill it %p with %"PRIu32" bytes, now %"PRIu32" bytes total",
             it, val->len, it->vlen);

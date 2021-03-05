@@ -1,0 +1,2 @@
+/usr/bin/ar qc libds_sarray.a  CMakeFiles/ds_sarray.dir/sarray.c.o
+/usr/bin/ranlib libds_sarray.a

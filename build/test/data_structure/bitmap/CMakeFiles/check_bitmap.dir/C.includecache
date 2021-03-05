@@ -1,0 +1,42 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../src/data_structure/bitmap/bitset.h
+stdint.h
+-
+
+/home/brian/a_bug_project/systems/pelikan/test/data_structure/bitmap/check_bitmap.c
+data_structure/bitmap/bitset.h
+-
+check.h
+-
+stddef.h
+-
+stdint.h
+-
+stdlib.h
+-
+
+/usr/local/include/check.h
+stddef.h
+-
+string.h
+-
+math.h
+-
+float.h
+-
+check_stdint.h
+-
+sys/types.h
+-
+
+/usr/local/include/check_stdint.h
+stdint.h
+-
+

@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/brian/a_bug_project/systems/pelikan/src/data_structure/bitmap/bitset.c
+bitset.h
+/home/brian/a_bug_project/systems/pelikan/src/data_structure/bitmap/bitset.h
+stddef.h
+-
+string.h
+-
+
+/home/brian/a_bug_project/systems/pelikan/src/data_structure/bitmap/bitset.h
+stdint.h
+-
+

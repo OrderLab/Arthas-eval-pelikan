@@ -1,0 +1,21 @@
+
+[general]
+clients = 2
+tcp_nodelay = true
+poolsize = 5000 # this specifies number of connection per thread
+# runtime ~= windows x duration
+windows = 2
+interval = 60
+request_ratelimit = 100000
+
+[[keyspace]]
+length = 32
+count = 153391690
+weight = 1
+commands = [
+    {action = "get", weight = 9},
+    {action = "set", weight = 1},
+]
+values = [
+    {length = 32, weight = 1},
+]

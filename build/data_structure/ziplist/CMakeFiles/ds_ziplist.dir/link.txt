@@ -1,0 +1,2 @@
+/usr/bin/ar qc libds_ziplist.a  CMakeFiles/ds_ziplist.dir/ziplist.c.o
+/usr/bin/ranlib libds_ziplist.a

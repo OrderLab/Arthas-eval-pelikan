@@ -1,0 +1,2 @@
+/usr/bin/ar qc libprotocol_ping.a  CMakeFiles/protocol_ping.dir/parse.c.o CMakeFiles/protocol_ping.dir/compose.c.o
+/usr/bin/ranlib libprotocol_ping.a

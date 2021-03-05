@@ -1,0 +1,2 @@
+/usr/bin/ar qc libprotocol_admin.a  CMakeFiles/protocol_admin.dir/format.c.o CMakeFiles/protocol_admin.dir/compose.c.o CMakeFiles/protocol_admin.dir/parse.c.o CMakeFiles/protocol_admin.dir/request.c.o CMakeFiles/protocol_admin.dir/response.c.o
+/usr/bin/ranlib libprotocol_admin.a

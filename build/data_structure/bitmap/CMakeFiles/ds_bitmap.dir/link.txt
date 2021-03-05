@@ -1,0 +1,2 @@
+/usr/bin/ar qc libds_bitmap.a  CMakeFiles/ds_bitmap.dir/bitset.c.o
+/usr/bin/ranlib libds_bitmap.a

@@ -621,6 +621,7 @@ _process_flush(struct response *rsp, struct request *req)
 void
 process_request(struct response *rsp, struct request *req)
 {
+    //printf("process request\n");
     log_verb("processing req %p, write rsp to %p", req, rsp);
     INCR(process_metrics, process_req);
 
@@ -675,6 +676,7 @@ process_request(struct response *rsp, struct request *req)
 
     default:
         rsp->type = RSP_CLIENT_ERROR;
+        printf("command doesn't exist\n");
         rsp->vstr = str2bstr(CMD_ERR_MSG);
         break;
     }

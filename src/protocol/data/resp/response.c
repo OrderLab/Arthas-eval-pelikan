@@ -19,6 +19,7 @@ static bool rspp_init = false;
 void
 response_reset(struct response *rsp)
 {
+    printf("response reset\n");
     ASSERT(rsp != NULL);
 
     STAILQ_NEXT(rsp, next) = NULL;
@@ -34,6 +35,7 @@ response_reset(struct response *rsp)
 struct response *
 response_create(void)
 {
+    printf("response create\n");
     rstatus_i status;
     struct response *rsp = cc_alloc(sizeof(struct response));
 

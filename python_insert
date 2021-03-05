@@ -1,0 +1,2 @@
+#!/bin/bash
+python pythonscript.py & echo $! > python.pid
