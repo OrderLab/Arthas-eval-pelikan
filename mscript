@@ -1,0 +1,3 @@
+#!/bin/bash
+extract-bc build/_bin/pelikan_twemcache
+opt -loweratomic <build/_bin/pelikan_twemcache.bc> build/_bin/pelikan_twemcache-lower.bc
